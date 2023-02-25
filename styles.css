@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Prism&family=Tilt+Warp&display=swap");
+
+:root {
+  --card-height: 500px;
+  --card-width: calc(var(--card-height) / 1.5);
+  --highlight-color: #ffc83d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1e23;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 50px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: blur(0);
+  transition: 0.5s ease;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  background-color: #fff;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  width: 100%;
+  height: 500px;
+  z-index: -1;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .wrapper {
+  border: 4px solid var(--highlight-color);
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
+}
+
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+}
+
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+
+.card:hover .cover-image {
+  filter: blur(2px);
+}
+
+h1,
+h2 {
+  font-family: "Bebas Neue", cursive;
+  /* font-family: "Tilt Prism", cursive; */
+  /* font-family: "Tilt Warp", cursive; */
+  color: white;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.title {
+  margin: 0;
+  position: absolute;
+  width: 300px;
+  bottom: 15px;
+  color: white;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
+}
+
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+  color: var(--highlight-color);
+}
+
+/* NOTE: Return the opacity when the character is in the background as well */
+
+.character {
+  width: 400px;
+  /* opacity: 0; */
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  /* opacity: 1; */
+  transform: translate3d(0%, -9%, 400px);
+}
+
+.bara {
+  width: 250px;
+}
+
+.card:hover .bara {
+  /* opacity: 1; */
+  transform: translate3d(0%, -11%, 250px);
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
