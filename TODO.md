@@ -6,5 +6,5 @@
    - Even different approach?
 - [ ] Update photos
 - [ ] Use CSS variables in `transform: translate3d()`
-- [ ] Implement some JS Framework in this repo
+- [ ] Implement some JS Framework into this repo
 - [ ] Try hosting?
