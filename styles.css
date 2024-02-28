@@ -11,25 +11,56 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1a1e23;
+  font-family: "Century Gothic", sans-serif;
 }
 
-.content {
+.logo {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 50px;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.logo img {
+  width: 100px;
+  object-fit: cover;
+}
+
+.text {
+  color: white;
 }
 
 .cards {
-  display: flex;
-  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 75px 50px;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+@media only screen and (min-width: 3100px) {
+  .cards {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .card {
@@ -48,6 +79,20 @@ body {
 
 .card:active {
   transform: scale(0.9);
+}
+
+.card--title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  cursor: default;
+  padding: 20px;
+}
+
+.card--title:active {
+  transform: scale(1);
 }
 
 .cover-image {
@@ -92,13 +137,23 @@ body {
 .wrapper::before {
   top: 0;
   height: 100%;
-  background-image: linear-gradient(to top, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
 }
 
 .wrapper::after {
   bottom: 0;
   opacity: 1;
-  background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
 }
 
 .card:hover .wrapper::before,
@@ -117,13 +172,12 @@ body {
 h1,
 h2 {
   font-family: "Bebas Neue", cursive;
-  /* font-family: "Tilt Prism", cursive; */
-  /* font-family: "Tilt Warp", cursive; */
   color: white;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
+  margin: 0;
 }
 
 h2 {
