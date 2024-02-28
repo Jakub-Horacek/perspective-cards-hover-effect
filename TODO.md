@@ -4,7 +4,7 @@
    - [Flip the card over?](https://www.w3schools.com/howto/howto_css_flip_card.asp)
    - Move the character to the corner and show more details?
    - Even different approach?
-- [ ] Update photos
+- [x] Update photos
 - [ ] Use CSS variables in `transform: translate3d()`
 - [ ] Implement some JS Framework into this repo
-- [ ] Try hosting?
+- [x] Try hosting?
