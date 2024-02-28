@@ -57,6 +57,27 @@ CSS:
   box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
 }
 
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: blur(0);
+  transition: 0.5s ease;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  background-color: #fff;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  width: 100%;
+  height: 500px;
+  z-index: -1;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+}
+
 .wrapper::before,
 .wrapper::after {
   content: "";
